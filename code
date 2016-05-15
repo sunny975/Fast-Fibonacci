@@ -12,13 +12,13 @@ int main() {
 	    scanf("%lld",&n);
 	    if (n==1)
 	    {
-	    printf("2\n");
+	    printf("1\n");
 	    continue;
 	    }
 	    n-=2;
 	    unsigned long long a,b,c,d,e,f,g,h;
-	    a=2;b=0;c=0;d=7;
-	    e=0;f=2;g=1;h=1;
+	    a=1;b=0;c=0;d=1;
+	    e=0;f=1;g=1;h=1;
 	    while(n>0)
 	    {
 	        if (n&1)
