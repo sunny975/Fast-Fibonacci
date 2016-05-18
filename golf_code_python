@@ -1,0 +1,7 @@
+i=input;t=i()
+while t:
+	t-=1;n,f,h,m=i()-2,1,1,10**9+7;a=g=d=1;b=c=e=0
+	while n>0:
+		if n&1:a,b,c,d=a*e+b*g,a*f+b*h,c*e+d*g,c*f+d*h;
+		e,f,g,h=(e*e+f*g)%m,(e*f+f*h)%m,(g*e+g*h)%m,(f*g+h*h)%m;n/=2
+	print (b+d)%m
