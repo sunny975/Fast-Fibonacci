@@ -1,44 +1,7 @@
-#include <iostream>
-#include <cstdio>
-#define m 1000000007
-using namespace std;
-
-int main() {
-	int t;
-	scanf("%d",&t);
-	while(t--)
-	{
-	    unsigned long long n;
-	    scanf("%lld",&n);
-	    if (n==1)
-	    {
-	    printf("1\n");
-	    continue;
-	    }
-	    n-=2;
-	    unsigned long long a,b,c,d,e,f,g,h;
-	    a=1;b=0;c=0;d=1;
-	    e=0;f=1;g=1;h=1;
-	    while(n>0)
-	    {
-	        if (n&1)
-	        {
-	           unsigned long long a1=(a*e+b*g)%m;
-	           unsigned long long b1=(a*f+b*h)%m;
-	           unsigned long long c1=(c*e+d*g)%m;
-	           unsigned long long d1=(c*f+d*h)%m;
-	           a=a1;b=b1;c=c1;d=d1;
-	        }
-	        unsigned long long e1=(e*e+f*g)%m;
-	        unsigned long long f1=(e*f+f*h)%m;
-	        unsigned long long g1=(g*e+g*h)%m;
-	        unsigned long long h1=(g*f+h*h)%m;
-	        e=e1;f=f1;g=g1;h=h1;
-	        n/=2;
-	    }
-	    printf("%lld\n",((b+d)%m));
-	    
-	}
-	
-	return 0;
-}
+i=input;t=i()
+while t:
+	t-=1;n,f,h,m=i()-2,1,1,10**9+7;a=g=d=1;b=c=e=0
+	while n>0:
+		if n&1:a,b,c,d=a*e+b*g,a*f+b*h,c*e+d*g,c*f+d*h;
+		e,f,g,h=(e*e+f*g)%m,(e*f+f*h)%m,(g*e+g*h)%m,(f*g+h*h)%m;n/=2
+	print (b+d)%m
